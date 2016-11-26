@@ -6,13 +6,17 @@ Credis aims to be fast and minimalistic with respect to memory usage. It support
 
 ## Why
 
-Redis seemed like what I was looking for in a social web project with high demands on scalability. Unfortunately a plain C client library was not available - until now.
+Redis seemed like what I was looking for in a social web project with high demands on scalability. Unfortunately a plain C client library was not available.
 
 ## Status
 
-It was recently moved from [http://code.google.com/p/credis] to github to keep it alive. It has been forked to github before and is actively maintained in those forks.
+It is not actively being maintained any longer in its original shape. Last commit was done Apr 23, 2012.
 
-Current status is "almost complete". Credis implements all commands supported by Redis 1.02, almost all of 1.2.6 and most of 2.0.2. Credis is work in progress but still quite mature. The long-term commitment is to provide full support for all Redis commands. A simple credis test client is available as example and for test. Refer to credis.h for a complete list of supported commands.
+Credis was moved from http://code.google.com/p/credis to github at Nov 26, 2016 to keep the original project available. It has been forked Google code to github before this move and may be actively maintained in those forks. Have a look at https://github.com/jimjag/credis.
+
+Status is *almost complete*. Credis implements all commands supported by Redis 1.02, almost all of 1.2.6 and most of 2.0.2. Credis is work in progress but still quite mature. The long-term commitment is to provide full support for all Redis commands. A simple credis test client is available as example and for test. 
+
+Refer to credis.h for a complete list of supported commands.
 
 # Credits
 
@@ -34,15 +38,15 @@ List, in no particular order, of people who has contributed to Credis:
 
 To build credis-test and credis shared and static libraries simply run: 
 
-´´´make´´´
+`make`
 
 To run through a number of credis tests run (presupposed that a Redis server is listening on the default port on localhost):
 
-´´´./credis-test´´´
+`./credis-test`
 
 To perform a simplistic performance benchmark test and measure number of set-commands per second, run:
 
-´´´./credis-test 10000´´´
+`./credis-test 10000`
 
 Where 10000 is the number of set-commands to execute. 
 
@@ -54,7 +58,7 @@ The example below connects to a Redis server running on the same machine. Sets a
 
 Error handling has been left out for simplicity.
 
-´´´c
+```c
 #include <stdio.h>
 #include "credis.h"
 
@@ -82,4 +86,4 @@ int main(int argc, char **argv)
 
   return 0;
 }
-´´´
+``
